@@ -13,8 +13,12 @@ Keep names and parameters unchanged so the automated tests can call them.
 #           count_vowels("Python") returns 1
 #           count_vowels("") returns 0
 def count_vowels(word):
-    # TODO: Return vowel count
-    pass
+    vowels = "aeiouAEIOU"
+    return sum(1 for char in word if char in vowels)
+
+
+# Testi:
+print(count_vowels("apple"))  # Çıktı: 2
 
 
 # Challenge 2 (Lists): Filter Positive Numbers
@@ -24,9 +28,11 @@ def count_vowels(word):
 #           filter_positives([-1, -2]) returns []
 #           filter_positives([1, 2, 3]) returns [1, 2, 3]
 def filter_positives(numbers):
-    # TODO: Return new list with only positive numbers
-    pass
+    return [num for num in numbers if num > 0]
 
+
+# Testi:
+print(filter_positives([2, -3, 5, 0]))  # Çıktı: [2, 5]
 
 # Challenge 3 (Tuples): Minimum and Maximum
 # Return a tuple (smallest, largest) containing the minimum and maximum values
@@ -34,16 +40,27 @@ def filter_positives(numbers):
 # Examples: min_max([3, 1, 4, 1, 5]) returns (1, 5)
 #           min_max([42]) returns (42, 42)
 #           min_max([-5, 0, 10]) returns (-5, 10)
-def min_max(numbers):
-    # TODO: Return (smallest, largest) as a tuple
-    pass
 
+
+def min_max(numbers):
+    return (min(numbers), max(numbers))
+
+
+# Testi:
+print(min_max([3, 1, 4, 1, 5]))  # Çıktı: (1, 5)
 
 # Challenge 4 (Dictionaries): Character Frequency Count
 # Return a dictionary mapping each character in text to its occurrence count.
 # Examples: count_characters("banana") returns {"b": 1, "a": 3, "n": 2}
 #           count_characters("hello") returns {"h": 1, "e": 1, "l": 2, "o": 1}
 #           count_characters("") returns {}
+
+
 def count_characters(text):
-    # TODO: Return character count dictionary
-    pass
+    frequency = {}
+    for char in text:
+        frequency[char] = frequency.get(char, 0) + 1
+    return frequency
+
+
+print(count_characters("banana"))
